@@ -27,14 +27,20 @@ button,
   margin-top: 10px;
 }
 
+[type="li"],
+li {
+  display: inline-block;
+}
+
 [type="button"]:hover,
 [type="submit"]:hover,
 button:hover {
-  background-color: white;
+  background-color: rgb(255, 167, 167);
 }
 
 .buttons {
   text-align: justify;
+  display: inline-block;
 }
 
 /* == HTML == */
