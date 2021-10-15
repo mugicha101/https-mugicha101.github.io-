@@ -30,7 +30,7 @@ const App = () => {
    * value entered by the user is being stored. In this case, it's stored here: event.target.value
    */
   const handleInput = (event) => {
-    //event.preventDefault(); // this prevents the page from refreshing when the button is clicked
+    event.preventDefault(); // this prevents the page from refreshing when the button is clicked
     // TODO: call setCurrTask and pass it the string the user inputed
     setCurrTask(event.target.value);
   };
@@ -43,7 +43,14 @@ const App = () => {
    *          const new_array = [...old_array, "wow"] (we're adding the string "wow")
    *          console.log(new_array) -> ["hi", "bye", "wow"]
    */
-  const addTask = () => {setTasks([...tasks, currTask])};
+  
+  const addTask = function(event) {
+    event.preventDefault();
+    if (currTask === "")
+      return;
+    
+    setTasks([...tasks, tasks.length.toString()+currTask]);
+  };
 
   return (
     <div className="home">
@@ -62,17 +69,16 @@ const App = () => {
                * 1. onClick (function) -> pass one of the functions above that handles a task being added
                * 2. Add text between the open and closing button tags, describing what the button should say
                */}
-              <Button id="add task" onClick={addTask}>Add Task</Button>
+              <button class="add_task" id="add task" onClick={addTask}>Add Task</button>
             </InputGroup.Append>
           </Form.Group>
         </Form>
         {/*using your tasks array, map through it and pass each task string to the Task component via the name prop*/}
         {tasks.map((task) => (
           <div>
-            <Task name={task} />
+            <Task name={task.substr(1)} id={task.substr(0,1)} />
           </div>
         ))}
-        {console.log(tasks)}
       </div>
     </div>
   );
