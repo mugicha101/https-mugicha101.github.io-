@@ -35,10 +35,21 @@ li {
 button.small {
   background-color:rgb(255, 255, 255);
   width: 50px;
-  height: 30px;
+  height: 20px;
   font-size: 10px;
   padding: 0rem 0rem;
   border-radius: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  font-weight: 800;
+  box-shadow: inset 0 3px 6px rgba(14, 0, 100, 0.5), 0 2px 6px rgba(33, 0, 85, 0.45);
+  transition: 0.15s;
+}
+
+button.small:hover {
+  width: 80px;
+  height: 30px;
+  font-size: 15px;
 }
 
 button.remove:hover {
@@ -50,16 +61,20 @@ button.rename:hover {
 }
 
 Button.add_task {
-  background-color: rgb(0, 255, 255);
+  background-color: rgb(0, 132, 255);
   width: 200px;
   height: 50px;
   border-radius: 20px;
   border-width: 3px;
   font-weight: 1000;
+  font-size: 25px;
   margin-top: 15px;
+  box-shadow: inset 0 10px 20px rgba(14, 0, 100, 0.5), 0 4px 6px rgba(33, 0, 85, 0.45);
+  transition: 0.15s;
 }
 button.add_task:hover {
-  background-color: rgb(200, 255, 255)
+  background-color: rgb(71, 181, 255);
+  width: 230px;
 }
 
 /* == HTML == */
@@ -106,7 +121,6 @@ div.title {
   width: fit-content;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 5px;
   margin-top: 5px;
   background-color: rgb(255, 255, 255);
   box-shadow: inset 0 3px 6px rgb(0, 217, 255);
